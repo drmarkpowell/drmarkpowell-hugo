@@ -30,7 +30,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          personal_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
           external_repository: drmarkpowell/drmarkpowell.github.io
           publish_branch: gh-pages  # default: gh-pages
           publish_dir: ./public
