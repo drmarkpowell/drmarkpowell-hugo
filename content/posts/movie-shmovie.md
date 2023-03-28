@@ -16,7 +16,7 @@ Some things we can quickly glean from the stated puzzle:
 1. The answer is two words that are opposites, one five letters long and the other four.
 2. The first three letters of each of the pair of words is the same, so “light” and “dark” would not work. That’ll help us see the correct answer when we find it, though.
 
-Time to write some code to automatically compute those point totals!
+Time to write some code to automatically compute those point totals! 
 
 ### Five letter words
 
