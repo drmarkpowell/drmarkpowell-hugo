@@ -28,8 +28,9 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: drmarkpowell/drmarkpowell.github.io
           publish_branch: gh-pages  # default: gh-pages
           publish_dir: ./public
