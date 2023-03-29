@@ -1,4 +1,4 @@
-baseURL = 'https://drmarkpowell.com'
+baseURL = 'https://drmarkpowell.com/'
 languageCode = 'en-us'
 title = 'Mark Powell'
 theme = 'PaperMod'
