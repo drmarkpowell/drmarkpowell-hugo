@@ -3,11 +3,10 @@ title: "Movie Shmovie"
 date: 2022-01-09T20:22:36-07:00
 draft: false
 ---
-
+ 
 Will Shortz himself has often said that however you want to solve the puzzle is fair game. I couldn’t come up with the solution in a short span today running it only in my head, and I have lots of other things to worry over in my spare cycles this week. That said, I figure why not have fun coding in Swift and solving the puzzle of the week at the same time?
 
-This week's puzzle
-As stated at [NPR](https://www.npr.org/2022/01/09/1071581311/sunday-puzzle-movie-shmovie):
+This week's puzzle as stated at [NPR](https://www.npr.org/2022/01/09/1071581311/sunday-puzzle-movie-shmovie):
 
 >This week’s challenge: This week’s challenge comes for Joseph Young, who conducts the blog “Puzzleria!” Let A = 1, B = 2, C = 3, etc. Think of a five-letter word whose letters’ values add up to 51. Now take this word’s last two letters. Add their values. (For example A and C would total 4.) Change these two letters to the single letter of the alphabet that represents their total. (In this case, D.) The result will be a new word that is the opposite of the original. What words are these?
 

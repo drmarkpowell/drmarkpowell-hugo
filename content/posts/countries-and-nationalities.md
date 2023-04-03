@@ -3,8 +3,8 @@ title: "Countries and Nationalities"
 date: 2023-03-12T18:22:18-07:00
 draft: false
 ---
-
-Here's another great puzzle to code a solution to.
+ 
+Here's another great puzzle to code a solution for.
 
 [This week's puzzle from NPR](https://www.npr.org/2023/03/12/1162867188/sunday-puzzle-around-the-world-in-nine-words):
 

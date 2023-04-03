@@ -1,11 +1,9 @@
 ---
-    title: "Vid Diva"
-    cover:
-        image: "/images/VidDivaAppIcon.png"
-        image_width: "180"
-        image_height: "180"
-        alt: "Vid Diva App Icon"
+    hiddenInHomeList: true
 ---
+<h1 class="centered">Vid Diva</h1>
+
+[![Vid Diva App Icon](/images/VidDivaAppIcon.png#center)](https://apps.apple.com/us/app/vid-diva/id1569992959)
 
 <h3 class="centered"> TV show and movie tracking app for iPhone and iPad </h3>
 
