@@ -1,0 +1,19 @@
+.centered {
+    text-align: center;
+}
+
+.row {
+	display: flex;
+}
+  
+.column-1 {
+	flex-basis: 40%;
+	padding: 10px;
+	margin: 10px;
+}
+
+.column-2 {
+	flex-basis: 60%;
+	padding: 10px;
+	margin: 10px;
+}

@@ -2,4 +2,51 @@ baseURL = 'https://www.drmarkpowell.com/'
 languageCode = 'en-us'
 title = 'Mark Powell'
 theme = 'PaperMod'
-publishDir = "public"
+publishDir = 'public'
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+    ShowFullTextinRSS = true
+    ShowCodeCopyButtons = true
+    ShowPostNavLinks = true
+    customCss = ["css/extra.css"]
+
+    [params.homeInfoParams]
+    Title = "Mostly Mobile Musings"
+    Content = "Methodically Making Magic on My Mac"
+
+    [[params.socialIcons]]
+    name = "Mastodon"
+    url = "https://iosdev.space/@drmarkpowell"
+
+    [[params.socialIcons]]
+    name = "Github"
+    url = "https://github.com/drmarkpowell"
+
+    [[params.socialIcons]]
+    name = "Twitter"
+    url = "https://twitter.com/drmarkpowell"
+
+    [[params.socialIcons]]
+    name = "Email"
+    url = "mailto:drmarkpowell@gmail.com"
+
+    [[params.socialIcons]]
+    name = "rss"
+    url = "drmarkpowell.com/index.xml"
+
+[menu]
+    [[menu.main]]
+    identifier = 'Blog'
+    name = 'Blog'
+    url = '/'
+
+    [[menu.main]]
+    identifier = 'apps'
+    name = 'Apps'
+    url = '/apps/'
