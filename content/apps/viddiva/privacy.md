@@ -7,6 +7,9 @@ This policy applies to all information collected or submitted on Vid Diva’s we
 ## iCloud
 Vid Diva stores some of your data in Apple’s iCloud service, such as subscribed TV series and movies, to enable some sync features between all devices signed into your Apple ID.
 
+## RevenueCat for subscription and/or in-app purchase of Vid Diva Premium
+Vid Diva uses RevenueCat to manage the purchase of subscription and/or in-app purchase. An anonymous user id is generated and used for this purpose and no other purpose in Vid Diva.
+
 ## Security
 All network data transfers in the Vid Diva app use HTTPS  to keep your information and use of the app secure.
 
@@ -29,5 +32,6 @@ By using our site or apps, you consent to our privacy policy.
 If you have questions regarding this privacy policy, you may email me. Please note that data management should be done within the Vid Diva app, not via email requests, for security reasons.
 
 ### Changes to this policy
+- July 16, 2023: RevenueCat information for subscription processing
 - July 25, 2021: First published.
 - April 24, 2022: No usage analytics were ever shipped in the final product. The section describing Usage Analytics was removed as they were never collected.
