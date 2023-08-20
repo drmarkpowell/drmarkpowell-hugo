@@ -3,7 +3,7 @@
 ---
 <h1 class="centered">Vid Diva</h1>
 
-[![Vid Diva App Icon](/images/VidDivaAppIcon.png#center)](https://apps.apple.com/us/app/vid-diva/id1569992959)
+[![Vid Diva App Icon](/images/icons/VidDivaAppIcon.png#center)](https://apps.apple.com/us/app/vid-diva/id1569992959)
 
 <h3 class="centered"> TV show and movie tracking app for iPhone and iPad </h3>
 
@@ -11,11 +11,11 @@
 
 Vid Diva is for people who want to track the shows and movies they want to watch, are watching, or have watched – all in a single app. Just add shows and movies to Vid Diva and never miss a new episode or premiere!
 
-{{< youtube lXBmbpVLEUc >}}
+{{< youtube f5x3QV_Hp5I >}}
 
 <div class="row">
 <div class="column-1">
-{{< figure src="/images/Vid-Diva-iPhone-13-calendar.png" alt="Vid Diva Episode Calendar on iPhone" width=256 >}}
+{{< figure src="/images/screens/Calendar iPhone 6.5.png" alt="Vid Diva Episode Calendar on iPhone" width=256 >}}
 </div>
 <div class="column-2">
 
@@ -32,7 +32,7 @@ Movies more your bag? Vid Diva tracks those too! It’ll even give you a heads-u
 
 ## Follow your favorites, free
 
-Vid Diva is free to use for up to 5 shows and movies. Vid Diva Premium allows for an unlimited number of shows and movies to be followed simultaneously and is available as a one-time in-app purchase.
+Vid Diva is free to use for up to 5 shows and movies. Vid Diva Premium allows for an unlimited number of shows and movies to be followed simultaneously and is available as either a one-time in-app purchase or an annual subscription if you prefer.
 
 ## Your data is yours
 
@@ -46,9 +46,12 @@ Other tracking apps ask to track you in return&mdash;collecting and selling your
 - A show calendar that gives you an easy-to-use view of what’s coming up. New episodes of the shows you follow will automatically be added to your watch list
 - Notifications that will ensure you know when a new movie is in cinemas or a new episode of your favorite show is out
 - A Home screen widget to highlight all of the new TV shows and movies coming out this week
+- A Stats screen with charts of your viewing habits and history, for your eyes only
 
-{{< figure src="/images/Vid-Diva-iPad-watchlist.png" align="center" alt="Vid Diva Watch List on iPad" >}}
+{{< figure src="/images/screens/Watchlist iPad.png" align="center" alt="Vid Diva Watch List on iPad" >}}
 
 [![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/vid-diva/id1569992959)
 
 [Privacy Policy](/apps/viddiva/privacy)
+
+[Press Kit](/apps/viddiva/presskit)
