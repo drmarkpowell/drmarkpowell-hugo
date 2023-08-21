@@ -1,5 +1,6 @@
 ---
     hiddenInHomeList: true
+    weight: 2
 ---
 <h1 class="centered">Vid Diva</h1>
 

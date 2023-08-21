@@ -1,6 +1,7 @@
 ---
     hiddenInHomeList: true
 ---
+
 # Vid Diva Privacy Policy
 This policy applies to all information collected or submitted on Vid Diva’s website and our apps for iPhone and any other devices and platforms.
 
