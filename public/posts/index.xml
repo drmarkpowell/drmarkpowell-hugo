@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Mark Powell</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Mark Powell</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Sep 2024 12:00:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabs with NavigationStacks: Deeper Programmatic Navigation</title>
+      <link>http://localhost:1313/posts/tabs-with-navigation/</link>
+      <pubDate>Sun, 22 Sep 2024 12:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/tabs-with-navigation/</guid>
+      <description>&lt;p&gt;There are some great developer posts about programmatic navigation using &lt;code&gt;NavigationStack&lt;/code&gt; with &lt;code&gt;NavigationPath&lt;/code&gt; such as &lt;a href=&#34;https://buresdv.substack.com/p/programmatic-navigation-in-swiftui?r=2vioyx&amp;amp;triedRedirect=true&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this one&lt;/a&gt; I recently read by David Bureš. This is great for apps that need navigation depth but not breadth. By breadth, I mean apps whose scope contains categories of screens that require a &lt;code&gt;TabView&lt;/code&gt;. If your app can benefit from the breadth of using tabs in addition to navigation stacks that give you the depth, you can still achieve programmatic navigation as well.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>There are some great developer posts about programmatic navigation using <code>NavigationStack</code> with <code>NavigationPath</code> such as <a href="https://buresdv.substack.com/p/programmatic-navigation-in-swiftui?r=2vioyx&amp;triedRedirect=true" target="_blank" rel="noopener">this one</a> I recently read by David Bureš. This is great for apps that need navigation depth but not breadth. By breadth, I mean apps whose scope contains categories of screens that require a <code>TabView</code>. If your app can benefit from the breadth of using tabs in addition to navigation stacks that give you the depth, you can still achieve programmatic navigation as well.</p>
+<p>If you want to browse or try this example code yourself, the <a href="https://github.com/drmarkpowell/PocketMonsterIndex" target="_blank" rel="noopener">whole project</a> is available (requires iOS 18 or macOS 15 to run).</p>
+<h3 id="catching-all-the-tabs-and-nav-stacks">Catching all the tabs and nav stacks</h3>
+<p>For this post, I created an example app with two tabbed views. The first tab displays a Grid view of Pokémon (or a Pokédex if you like). The Grid supports a <code>NavigationStack</code> that displays a detail view if you tap on a grid cell view. The second tab displays a Grid view of Berries (or an inventory if you prefer). Tapping on a grid cell view here pushes a berry detail view onto the second tabbed view&rsquo;s <code>NavigationStack</code>.</p>
+<p>Let&rsquo;s start by looking at the main screen that creates a <code>TabView</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@Environment(AppModel.<span style="color:#66d9ef">self</span>) <span style="color:#66d9ef">var</span> appModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>    @Bindable <span style="color:#66d9ef">var</span> appModel = appModel
+</span></span><span style="display:flex;"><span>    TabView(selection: <span style="color:#960050;background-color:#1e0010">$</span>appModel.selectedTabName) {
+</span></span><span style="display:flex;"><span>        Tab(
+</span></span><span style="display:flex;"><span>            TabName.pokedex.title,
+</span></span><span style="display:flex;"><span>            systemImage: <span style="color:#e6db74">&#34;square.grid.3x3&#34;</span>,
+</span></span><span style="display:flex;"><span>            value: TabName.pokedex
+</span></span><span style="display:flex;"><span>        ) {
+</span></span><span style="display:flex;"><span>            PokedexScreen()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Tab(
+</span></span><span style="display:flex;"><span>            TabName.berries.title,
+</span></span><span style="display:flex;"><span>            systemImage: <span style="color:#e6db74">&#34;carrot.fill&#34;</span>,
+</span></span><span style="display:flex;"><span>            value: TabName.berries
+</span></span><span style="display:flex;"><span>        ) {
+</span></span><span style="display:flex;"><span>            BerriesScreen()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    .tabViewStyle(.sidebarAdaptable)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This <code>TabView</code> uses the newest SwiftUI API for iOS 18. If you&rsquo;re using the iOS 17 API or earlier, you need to use <code>.tag</code> instead of the <code>value</code> to <a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-embed-views-in-a-tab-bar-using-tabview" target="_blank" rel="noopener">support tab selection</a> (Thanks, Paul!). I also threw in the iPadOS 18 <code>.sidebarAdaptable</code> tab view style, which Stewart Lynch made a <a href="https://youtu.be/hIoxphFMjYw?si=AQfciJa4qmleCVoq" target="_blank" rel="noopener">great tutorial</a> about, as well as tab customization and reordering (omitted here for brevity).</p>
+<p>The <code>AppModel</code> is our application state model class (ViewModel in the MVVM sense if you like) that will contain our selected tab and navigation paths for each tab: The <code>TabView</code> above binds the <code>selectedTab</code> to this var in <code>AppModel</code>. Let&rsquo;s look at that next.</p>
+<h3 id="the-appmodel-class">The AppModel Class</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@Observable
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppModel</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> selectedTabName = TabName.pokedex
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> pokedexTab = TabModel(name: .pokedex)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> berriesTab = TabModel(name: .berries)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">navigateTo</span>(category: String, index: Int) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> category == berriesTab.name.rawValue {
+</span></span><span style="display:flex;"><span>            berriesTab.path = NavigationPath([index])
+</span></span><span style="display:flex;"><span>            selectedTabName = .berries
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> category == pokedexTab.name.rawValue {
+</span></span><span style="display:flex;"><span>            pokedexTab.path = NavigationPath([index])
+</span></span><span style="display:flex;"><span>            selectedTabName = .pokedex
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@Observable
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TabModel</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: TabName
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> path = NavigationPath()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(name: TabName) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.name = name
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">TabName</span>: String, CaseIterable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> pokedex
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> berries
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> title: String { rawValue.capitalized }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Using an enumeration to define the tabs the app supports is generally a good idea and useful for programmatic navigation. <code>TabModel</code> is a custom <code>@Observable</code> class for capturing each tab instance&rsquo;s unique name along with its <code>NavigationPath</code> so that we can drive that programmatically as well.</p>
+<p>Here&rsquo;s a simplified look at the Pokédex view (the first of the tabbed views):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PokedexScreen</span>: View {
+</span></span><span style="display:flex;"><span>    @Environment(AppModel.<span style="color:#66d9ef">self</span>) <span style="color:#66d9ef">var</span> appModel
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        @Bindable <span style="color:#66d9ef">var</span> appModel = appModel
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        NavigationStack(path: <span style="color:#960050;background-color:#1e0010">$</span>appModel.pokedexTab.path) {
+</span></span><span style="display:flex;"><span>            LazyVGrid(columns: [...]) {
+</span></span><span style="display:flex;"><span>                ForEach(pokemon) { pokemon <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                    Button {
+</span></span><span style="display:flex;"><span>                        appModel.pokedexTab.path.append(pokemon.id)
+</span></span><span style="display:flex;"><span>                    } label: {
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e">// ... cut for legibility</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            .navigationTitle(Text(TabName.pokedex.title))
+</span></span><span style="display:flex;"><span>            .navigationDestination(<span style="color:#66d9ef">for</span>: Int.<span style="color:#66d9ef">self</span>) { id <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                PokemonScreen(id: id)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>In this view, the <code>NavigationPath</code> is bound to the path for its corresponding <code>TabModel</code> in the <code>AppModel</code>. When the user taps a grid cell view, the ID of the Pokémon is pushed onto the path and the app navigates to a newly created <code>PokemonScreen</code> (view). The <code>BerriesScreen</code> works similarly, navigating to a new <code>BerryScreen</code> when a Berry grid cell view is tapped.</p>
+<h3 id="flexible-navigation">Flexible Navigation</h3>
+<p>To show the flexibility of how this programmatic navigation can be used to jump into any content in the app, let&rsquo;s implement deep linking:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>@main
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">PocketMonsterIndexApp</span>: App {
+</span></span><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> appModel = AppModel()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some Scene {
+</span></span><span style="display:flex;"><span>        WindowGroup {
+</span></span><span style="display:flex;"><span>            TabsView()
+</span></span><span style="display:flex;"><span>                .environment(appModel)
+</span></span><span style="display:flex;"><span>                .onOpenURL { url <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>url.pathComponents<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> index = Int(url.pathComponents.last ?? <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> 
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> category = url.host() <span style="color:#66d9ef">else</span> { 
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> 
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    appModel.navigateTo(category: String(category), index: index)
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>.onOpenURL(URL)</code> implemented here will let the app respond to opening links from a browser or other apps. For example, I chose to respond to links like <a href="pmi://pokedex/99">pmi://pokedex/99</a> and <a href="pmi://berries/16">pmi://berries/16</a>. When the app responds, it looks at the url host and path values. The host value is expected to be one of the supported tab names (pokedex, berries) and the path is expected to contain an index integer value. The <code>AppModel.navigateTo(category, index)</code> function will set the selected tab and its corresponding NavigationPath index, cleanly navigating you to the details.</p>
+<p>I think this approach would also work very well with App Intents if you are coming in from a Shortcut, Spotlight or Siri. This wasn&rsquo;t space for all that in this post, however. If you would like to see how that would look, <a href="https://iosdev.space/@drmarkpowell" target="_blank" rel="noopener">send me a message</a> on Mastodon and let me know.</p>
+<p>If you want to see the <a href="https://github.com/drmarkpowell/PocketMonsterIndex" target="_blank" rel="noopener">whole Xcode project</a>, browse the code or give it a try (iOS 18 or macOS 15 required to run).</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Fill In The Blank</title>
+      <link>http://localhost:1313/posts/fill-in-the-blank/</link>
+      <pubDate>Sun, 09 Jul 2023 17:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/fill-in-the-blank/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s another great puzzle to code a solution for.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npr.org/2023/07/09/1186650754/sunday-puzzle-fill-in-the-blank&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This week&amp;rsquo;s puzzle from NPR&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This week&amp;rsquo;s challenge comes from listener Peter Gwinn, who writes for &amp;ldquo;Wait Wait &amp;hellip; Don&amp;rsquo;t Tell Me!&amp;rdquo; Take the first name of a famous movie director. Write it in upper- and lowercase letters. Rotate the third letter of this name 180° and you&amp;rsquo;ll get the name of the main character in one of this director&amp;rsquo;s most popular movies. Who is it?&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Here&rsquo;s another great puzzle to code a solution for.</p>
+<p><a href="https://www.npr.org/2023/07/09/1186650754/sunday-puzzle-fill-in-the-blank" target="_blank" rel="noopener">This week&rsquo;s puzzle from NPR</a>:</p>
+<blockquote>
+<p>This week&rsquo;s challenge comes from listener Peter Gwinn, who writes for &ldquo;Wait Wait &hellip; Don&rsquo;t Tell Me!&rdquo; Take the first name of a famous movie director. Write it in upper- and lowercase letters. Rotate the third letter of this name 180° and you&rsquo;ll get the name of the main character in one of this director&rsquo;s most popular movies. Who is it?</p>
+</blockquote>
+<p>It&rsquo;s complicated to read, but it&rsquo;s easier than it sounds. Just turn the third letter of the first name upside-down and it should spell the name of a character the director is famous for in their films. Sounds good!</p>
+<h3 id="imdb-does-free-data">IMDb Does Free Data</h3>
+<p>A convenient list of all actors, directors, etc. can be found <a href="https://datasets.imdbws.com/name.basics.tsv.gz" target="_blank" rel="noopener">here</a></p>
+<h3 id="to-the-swift">To the Swift!</h3>
+<p>Here&rsquo;s my solution:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">findAnswers</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> filePath = Bundle.main.path(forResource:<span style="color:#e6db74">&#34;name.basics&#34;</span>, ofType: <span style="color:#e6db74">&#34;tsv&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> contentData = FileManager.<span style="color:#66d9ef">default</span>.contents(atPath: filePath!)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> content = String(data:contentData!, encoding:String.Encoding.utf8)<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> substitutions = [ <span style="color:#e6db74">&#34;b&#34;</span>: <span style="color:#e6db74">&#34;q&#34;</span>, <span style="color:#e6db74">&#34;q&#34;</span>: <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;p&#34;</span>: <span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>: <span style="color:#e6db74">&#34;p&#34;</span>, <span style="color:#e6db74">&#34;n&#34;</span>: <span style="color:#e6db74">&#34;u&#34;</span>, <span style="color:#e6db74">&#34;u&#34;</span>: <span style="color:#e6db74">&#34;n&#34;</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> line <span style="color:#66d9ef">in</span> content.components(separatedBy: <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> fields = line.components(separatedBy: <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> fields.count <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> fields[<span style="color:#ae81ff">4</span>].contains(<span style="color:#e6db74">&#34;director&#34;</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> name = fields[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> firstName = name.components(separatedBy: <span style="color:#e6db74">&#34; &#34;</span>).first ?? name
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> firstName.count <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> thirdIndex = firstName.index(firstName.startIndex, offsetBy: <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> third = String(firstName[thirdIndex])
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> substitutions.keys.contains(<span style="color:#66d9ef">where</span>: {$0 == third}) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> fourthIndex = firstName.index(firstName.startIndex, offsetBy: <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> one = String(firstName[firstName.startIndex..&lt;thirdIndex])
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> two = substitutions[third]<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> three = String(firstName[fourthIndex..&lt;firstName.endIndex])
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> possibleAnswer = one <span style="color:#f92672">+</span> two <span style="color:#f92672">+</span> three
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">&#34;Character: </span><span style="color:#e6db74">\(</span>possibleAnswer<span style="color:#e6db74">)</span><span style="color:#e6db74">, Director Name: </span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>After dropping the tsv file into the project, I proceeded to load it in and parse it in a straightforward way first by lines and then separating out the tab-delimited fields. The person&rsquo;s name is the index 1 field and their best-known role list is in index 4. If they have a role that includes &ldquo;director&rdquo;, we consider them.</p>
+<p>There are only a subset of possible lowercase characters that legitimately look right when flipped upside-down. The possible substitutions I decided to look for included:</p>
+<ul>
+<li>u &lt;-&gt; n</li>
+<li>d &lt;-&gt; p</li>
+<li>b &lt;-&gt; q (Ok, I was feeling generous 😉)</li>
+</ul>
+<h3 id="swift-strings-could-be-more-fun">Swift Strings Could Be More Fun</h3>
+<p>Swift doesn&rsquo;t exactly make it easy to take pieces of strings out and reassemble them! Composing the required range indices into the string is a bit verbose. It was necessary to get 2 indices for me to code this: the first one to index on the third character, and the second one to index from the fourth character to end of the string to get the last portion of the name. Swift doesn&rsquo;t have a <strong>&gt;..</strong> operator, or we could have expressed it as <code>[third&gt;..firstName.endIndex]</code>. But, all we have to work with is <code>...</code> and <code>&lt;..</code> operators, so another index is needed to get that last substring of the name.</p>
+<p>With all the new possibilities that Swift 5.9 Macros allow for, I&rsquo;m sure we won&rsquo;t have to wait too long for developers to make a nice package of String functionality enhancements that would make this sort of thing more concise and intuitive. It will be interesting to see what packages become part of the new mainstream in the near future&hellip;or even become subsumed into the Swift language for future official releases!</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Countries and Nationalities</title>
+      <link>http://localhost:1313/posts/countries-and-nationalities/</link>
+      <pubDate>Sun, 12 Mar 2023 18:22:18 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/countries-and-nationalities/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s another great puzzle to code a solution for.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npr.org/2023/03/12/1162867188/sunday-puzzle-around-the-world-in-nine-words&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;This week&amp;rsquo;s puzzle from NPR&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This week&amp;rsquo;s challenge is a spinoff of my on-air puzzle. Name two countries that have consonyms that are nationalities of other countries. In each case, the consonants in the name of the country are the same consonants in the same order as those in the nationality of another country. No extra consonants can appear in either name. The letter Y isn&amp;rsquo;t used.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Here&rsquo;s another great puzzle to code a solution for.</p>
+<p><a href="https://www.npr.org/2023/03/12/1162867188/sunday-puzzle-around-the-world-in-nine-words" target="_blank" rel="noopener">This week&rsquo;s puzzle from NPR</a>:</p>
+<blockquote>
+<p>This week&rsquo;s challenge is a spinoff of my on-air puzzle. Name two countries that have consonyms that are nationalities of other countries. In each case, the consonants in the name of the country are the same consonants in the same order as those in the nationality of another country. No extra consonants can appear in either name. The letter Y isn&rsquo;t used.</p>
+</blockquote>
+<p>So if you remove all the vowels, the name of a country will equal the name of a nationality from a different country. Also, for our purposes a letter Y can be considered a vowel (ignored). Sounds good!</p>
+<h3 id="internet-of-trivia-things">Internet of Trivia Things</h3>
+<p>A convenient list of all countries can be found <a href="https://copylists.com/geography/list-all-countries/" target="_blank" rel="noopener">here</a></p>
+<p>&hellip;and a list of nationalities <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/664133/CH_Nationality_List_20171130_v1.csv" target="_blank" rel="noopener">here</a></p>
+<h3 id="to-the-swift">To the Swift!</h3>
+<p>Here&rsquo;s my solution:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doPuzzle</span>() async <span style="color:#66d9ef">throws</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> countriesUrl = Bundle.main.url(forResource: <span style="color:#e6db74">&#34;countries&#34;</span>, withExtension: <span style="color:#e6db74">&#34;txt&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> countryNames = countriesUrl!.lines
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> countriesNoVowels: [String: String] = [:]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">try</span> await name <span style="color:#66d9ef">in</span> countryNames {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> noVowels = name.lowercased()
+</span></span><span style="display:flex;"><span>                .filter({ notAVowel($0) })
+</span></span><span style="display:flex;"><span>                .map({ <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> })
+</span></span><span style="display:flex;"><span>                .reduce(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#f92672">+</span>)
+</span></span><span style="display:flex;"><span>            countriesNoVowels[noVowels] = name
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> nationalitiesUrl = Bundle.main.url(forResource: <span style="color:#e6db74">&#34;nationalities&#34;</span>, withExtension: <span style="color:#e6db74">&#34;txt&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> nationalityNames = nationalitiesUrl!.lines
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> nationalitiesNoVowels: [String: String] = [:]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">try</span> await name <span style="color:#66d9ef">in</span> nationalityNames {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> noVowels = name.lowercased()
+</span></span><span style="display:flex;"><span>                .filter({ notAVowel($0) })
+</span></span><span style="display:flex;"><span>                .map({ <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> })
+</span></span><span style="display:flex;"><span>                .reduce(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#f92672">+</span>)
+</span></span><span style="display:flex;"><span>            nationalitiesNoVowels[noVowels] = name
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> countriesNoVowelsSet: Set&lt;String&gt; = []
+</span></span><span style="display:flex;"><span>        countriesNoVowels.keys.forEach {
+</span></span><span style="display:flex;"><span>            countriesNoVowelsSet.insert($0)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        nationalitiesNoVowels.keys.forEach {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> countriesNoVowelsSet.contains($0) {
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Match! </span><span style="color:#e6db74">\(</span>countriesNoVowels[$0]<span style="color:#f92672">!</span><span style="color:#e6db74">)</span><span style="color:#e6db74"> </span><span style="color:#e6db74">\(</span>nationalitiesNoVowels[$0]<span style="color:#f92672">!</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">notAVowel</span>(<span style="color:#66d9ef">_</span> character: Character) -&gt; Bool {
+</span></span><span style="display:flex;"><span>        character <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        character <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        character <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        character <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        character <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        character <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;y&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>The beauty of Swift&rsquo;s string implementation lets us iterate over each character of the name of a country or a nationality with a function like <strong>map</strong> or <strong>filter</strong>. As we need to remove the vowels and keep only consonants, a call to <strong>filter</strong> handles that aspect of the work, leaving us with a character. Following that, a call to <em>map</em>* to transform the character to string, and <strong>reduce</strong> to combine all of those single-character strings together, and we have our consonants-only names. Making these names the key values of a dictionary allows us to map them back to their original country or nationality name.</p>
+<h3 id="the-need-for-speed">The Need? for Speed</h3>
+<p>To keep things snappy, I also build a <strong>Set<String></strong> of vowel-less country names so that I can call <strong>.contains(_: String)</strong> on that for each nationality to check for a match. As it <a href="https://developer.apple.com/documentation/swift/set/contains%28_:%29" target="_blank" rel="noopener">states in the Apple docs</a>, when the elements are <strong>Hashable</strong>, the performance of a contains check is O(1), so it&rsquo;s extremely fast. Although I may be guilty of premature optimization for this small data set, let&rsquo;s just chalk this one up to sticking with best practices, shall we? ;)</p>
+<h3 id="one-out-of-two-aint-bad-also-spoilers">One out of Two Ain&rsquo;t Bad (Also Spoilers)</h3>
+<p>So unfortunately with these data sources, we have no association between country and nationality, so we can&rsquo;t automatically reject matches from the <em>same</em> country like Germany and German. However, if we allow our eyes to fall immediately to the end of the list of matches we see:</p>
+<blockquote>
+<p>Match! Lebanon Albanian</p>
+</blockquote>
+<p>&hellip;which is great! This was indeed one of the accepted answers.</p>
+<p>Now if you look ahead to next week&rsquo;s puzzle for this accepted answer, you can also see that there was a second solution that we didn&rsquo;t see!</p>
+<blockquote>
+<p>Ukraine &ndash;&gt; Korean</p>
+</blockquote>
+<p>Which is a shame because the puzzle stated that the solver needed to find both. The reason why our code didn&rsquo;t find this answer was because in our nationalities file we have entries for</p>
+<blockquote>
+<p>North Korean</p>
+<p>South Korean</p>
+</blockquote>
+<p>&hellip;but none for simply &ldquo;Korean&rdquo;. That&rsquo;s politics for you, I suppose.</p>
+<p>It is still a fun puzzle to code up a solution for though. So, until next week, happy solving!</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Movie Shmovie</title>
+      <link>http://localhost:1313/posts/movie-shmovie/</link>
+      <pubDate>Sun, 09 Jan 2022 20:22:36 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/movie-shmovie/</guid>
+      <description>&lt;p&gt;Will Shortz himself has often said that however you want to solve the puzzle is fair game. I couldn’t come up with the solution in a short span today running it only in my head, and I have lots of other things to worry over in my spare cycles this week. That said, I figure why not have fun coding in Swift and solving the puzzle of the week at the same time?&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Will Shortz himself has often said that however you want to solve the puzzle is fair game. I couldn’t come up with the solution in a short span today running it only in my head, and I have lots of other things to worry over in my spare cycles this week. That said, I figure why not have fun coding in Swift and solving the puzzle of the week at the same time?</p>
+<p>This week&rsquo;s puzzle as stated at <a href="https://www.npr.org/2022/01/09/1071581311/sunday-puzzle-movie-shmovie" target="_blank" rel="noopener">NPR</a>:</p>
+<blockquote>
+<p>This week’s challenge: This week’s challenge comes for Joseph Young, who conducts the blog “Puzzleria!” Let A = 1, B = 2, C = 3, etc. Think of a five-letter word whose letters’ values add up to 51. Now take this word’s last two letters. Add their values. (For example A and C would total 4.) Change these two letters to the single letter of the alphabet that represents their total. (In this case, D.) The result will be a new word that is the opposite of the original. What words are these?</p>
+</blockquote>
+<p>Some things we can quickly glean from the stated puzzle:</p>
+<ol>
+<li>The answer is two words that are opposites, one five letters long and the other four.</li>
+<li>The first three letters of each of the pair of words is the same, so “light” and “dark” would not work. That’ll help us see the correct answer when we find it, though.</li>
+</ol>
+<p>Time to write some code to automatically compute those point totals!</p>
+<h3 id="five-letter-words">Five letter words</h3>
+<p>First, we need to find ourselves a text file containing all the five letter words that we want to test.</p>
+<p>The <a href="https://www.thefreedictionary.com/5-letter-words.htm" target="_blank" rel="noopener">free dictionary</a> website has a very convenient list of five letter words that are in the Scrabble dictionary and several others. That’ll do nicely: copy and paste into a text file and we’re ready to read it with actual code and do some processing.</p>
+<h3 id="its-swift-time">It&rsquo;s Swift time</h3>
+<p>After firing up Xcode, here is the quick-fire code that will read in each word from the file and total up its point value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">doPointTotal</span>() async <span style="color:#66d9ef">throws</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> fiveUrl = Bundle.main.url(forResource: <span style="color:#e6db74">&#34;five_letter_words&#34;</span>, withExtension: <span style="color:#e6db74">&#34;txt&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> wordLines = fiveUrl!.lines
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">try</span> await line <span style="color:#66d9ef">in</span> wordLines {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> line.count <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> pointTotal:UInt8 = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> char <span style="color:#66d9ef">in</span> line.lowercased() {
+</span></span><span style="display:flex;"><span>                pointTotal <span style="color:#f92672">+=</span> char.asciiValue! <span style="color:#f92672">-</span> Character(<span style="color:#e6db74">&#34;a&#34;</span>).asciiValue! <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> pointTotal == <span style="color:#ae81ff">51</span> {
+</span></span><span style="display:flex;"><span>                print(line)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>The <strong>URL.lines</strong> returns a nice <strong>AsyncSequence</strong> that we can iterate over using this for try await loop. This will actually interleave the I/O of reading the file with the process, so the content will page in on demand if the file is really large, avoiding the need to wait to read it all first before processing can begin (or crash if there’s not enough memory capacity to read it all!) Three cheers for async/await in Swift!</p>
+<p>Also, how elegant is that <strong>for try await</strong> syntax? Eat your heart out and my dust, Python, most popular language in the world!</p>
+<p>Once we have each word as a String, it’s a simple matter of computing the value of each character and assign “a” as 1, “b” as 2, and so on. If the point total of the word is exactly 51, we print it out.</p>
+<p>Now before we write more code than we really need, let’s run it and see what we get:</p>
+<blockquote>
+<p>avoid</p>
+<p>broke</p>
+<p>daily</p>
+</blockquote>
+<p>Looks like it’s working great! I actually got 14 words from my dictionary file that meet the puzzle criteria, and that narrows it down nicely, (The other words are omitted from this post to avoid spoilers for my fellow puzzle solving fans.)</p>
+<p>That’s it for this week! Happy coding and puzzle solving.</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

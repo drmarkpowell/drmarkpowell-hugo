@@ -1,9 +1,11 @@
 baseURL = 'https://www.drmarkpowell.com/'
-paginate = 5
 languageCode = 'en-us'
 title = 'Mark Powell'
 theme = 'PaperMod'
 publishDir = 'public'
+
+[pagination]
+pagerSize = 5
 
 [markup.goldmark.renderer]
     unsafe = true
