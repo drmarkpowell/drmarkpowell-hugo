@@ -15,7 +15,7 @@ OWL requires camera and photo library access to detect and translate characters 
 
 ## Machine Learning Models
 
-OWL uses a YOLO CoreML model for character detection:
+OWL uses an on-device model for character detection:
 
 - The ML model is downloaded once during app installation
 - All inference (character detection) runs locally on your device
