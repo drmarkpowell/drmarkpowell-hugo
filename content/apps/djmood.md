@@ -1,52 +1,60 @@
 ---
-    hiddenInHomeList: true
-    weight: 3
+hiddenInHomeList: true
+weight: 3
 ---
 <h1 class="centered">DJ Mood</h1>
 
-[![DJ Mood App Icon](/images/icons/DJMoodAppIcon.png#center)](https://apps.apple.com/us/app/djmood/APPID)
+<a href="https://apps.apple.com/us/app/djmood/id6746470429"><img src="/images/icons/DJMoodAppIcon.png" alt="DJ Mood App Icon" width="128" style="display: block; margin: 0 auto;"></a>
 
-<h3 class="centered"> Discover Apple Music's hidden mood and activity playlists </h3>
+<h3 class="centered">Find the perfect playlist for every mood</h3>
 
-[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/APPID)
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/id6746470429)
 
-DJ Mood surfaces Apple Music's 250+ hidden "Siri playlists" - expertly curated mood and activity-based playlists that are normally only discoverable by asking Siri. Browse and play playlists for any mood or moment, all in a beautiful interface designed for iPhone, iPad, Mac, and Apple TV.
+DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.
 
 <div class="row">
 <div class="column-1">
-{{< figure src="/images/screens/djmood-categories.png" alt="DJMood Category Grid" width=256 >}}
+{{< figure src="/images/screens/djmood-iphone-categories.png" alt="DJ Mood iPhone Category Grid" width=256 >}}
 </div>
 <div class="column-2">
 
-## Every mood, every moment
+## Curated by Apple, surfaced by DJ Mood
 
-DJ Mood organizes hundreds of Apple Music playlists into easy-to-browse categories like Happy, Chill, Workout, Focus, and more. No more asking Siri or searching endlessly - just tap and play.
+Access 250+ "Siri playlists" that Apple created but never made browsable — from "Feeling Happy" to "Rainy Day Vibes" to "Workout Intensity."
 
-## Designed for all your devices
+## Effortless discovery
 
-Whether you're on iPhone, iPad, Mac, or Apple TV, DJ Mood adapts beautifully to your screen. Enhanced with stunning Metal shader effects (optional), the app makes browsing playlists a visual delight.
+No more guessing what to ask Siri or hunting through search. Just open the app, tap a mood, and let the music play.
 
 </div>
 </div>
 
-## Free to use
+{{< figure src="/images/screens/djmood-ipad-happy.png" alt="DJ Mood iPad Happy Mood" >}}
 
-DJ Mood is completely free to download and use. A tip jar is available if you'd like to support continued development.
+## Beautiful on every device
 
-## Privacy first
+Enjoy a delightful, swipe-friendly interface on iPhone, a powerful sidebar on iPad and Mac, and a gorgeous full-screen experience on Apple TV.
 
-DJ Mood collects zero data. Your listening habits are yours alone. The app works entirely on your device using Apple's MusicKit framework.
+## Fully accessible
 
-### Download DJ Mood today and enjoy:
+Comprehensive VoiceOver support ensures everyone can navigate by mood and discover great music.
 
-- Instant access to 250+ curated Apple Music playlists
-- Browse by mood and activity categories
-- Siri and Shortcuts integration for voice control
-- Spotlight search to quickly find any playlist
-- Beautiful emoji-based navigation with optional shader effects
-- Works seamlessly across iPhone, iPad, Mac, and Apple TV
-- No account required, no data collection
+## Privacy-first, tip-supported
 
-[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/APPID)
+DJ Mood collects zero data. Your listening habits are yours alone. If you love the app, support development with an optional one-time tip.
+
+### Whether you're:
+
+- Feeling happy or need to let off steam
+- Hitting the gym or winding down
+- Falling in love or finding focus
+- Celebrating the seasons or holidays
+- Looking for inspiration or self-care
+
+…DJ Mood makes it effortless to discover Apple Music's best-kept secret.
+
+### DJ Mood is your personal DJ — always ready to match your moment.
+
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/id6746470429)
 
 [Privacy Policy](/apps/djmood/privacy)

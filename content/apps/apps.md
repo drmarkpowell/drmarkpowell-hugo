@@ -14,11 +14,11 @@
 
 ## [DJ Mood](/apps/djmood/)
 
-### Discover Apple Music's hidden mood and activity playlists
+### Find the perfect playlist for every mood
 
-DJ Mood surfaces Apple Music's 250+ hidden "Siri playlists" - expertly curated mood and activity-based playlists that are normally only discoverable by asking Siri. Browse and play playlists for any mood or moment.
+DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.
 
-[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/APPID)
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/id6746470429)
 
 </div>
 </div>
