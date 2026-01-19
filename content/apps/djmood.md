@@ -58,3 +58,5 @@ DJ Mood collects zero data. Your listening habits are yours alone. If you love t
 [![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/djmood/id6746470429)
 
 [Privacy Policy](/apps/djmood/privacy)
+
+[Press Kit](/apps/djmood/presskit)
