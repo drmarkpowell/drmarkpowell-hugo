@@ -94,62 +94,195 @@
       
       <guid>http://localhost:1313/apps/djmood/</guid>
       <description>&lt;h1 class=&#34;centered&#34;&gt;DJ Mood&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/djmood/APPID&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/icons/DJMoodAppIcon.png#center&#34; alt=&#34;DJ Mood App Icon&#34;  /&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/djmood/id6746470429&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/icons/DJMoodAppIcon.png&#34; alt=&#34;DJ Mood App Icon&#34; width=&#34;128&#34; style=&#34;display: block; margin: 0 auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 class=&#34;centered&#34;&gt;Find the perfect playlist for every mood&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/djmood/id6746470429&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center&#34; alt=&#34;Download on the App Store&#34;  /&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;h3 class=&#34;centered&#34;&gt; Discover Apple Music&#39;s hidden mood and activity playlists &lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/djmood/APPID&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center&#34; alt=&#34;Download on the App Store&#34;  /&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;DJ Mood surfaces Apple Music&amp;rsquo;s 250+ hidden &amp;ldquo;Siri playlists&amp;rdquo; - expertly curated mood and activity-based playlists that are normally only discoverable by asking Siri. Browse and play playlists for any mood or moment, all in a beautiful interface designed for iPhone, iPad, Mac, and Apple TV.&lt;/p&gt;
+&lt;p&gt;DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.&lt;/p&gt;
 &lt;div class=&#34;row&#34;&gt;
 &lt;div class=&#34;column-1&#34;&gt;
 &lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/screens/djmood-categories.png&#34;
-         alt=&#34;DJMood Category Grid&#34; width=&#34;256&#34;/&gt; 
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/screens/djmood-iphone-categories.png&#34;
+         alt=&#34;DJ Mood iPhone Category Grid&#34; width=&#34;256&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;/div&gt;
 &lt;div class=&#34;column-2&#34;&gt;
-&lt;h2 id=&#34;every-mood-every-moment&#34;&gt;Every mood, every moment&lt;/h2&gt;
-&lt;p&gt;DJ Mood organizes hundreds of Apple Music playlists into easy-to-browse categories like Happy, Chill, Workout, Focus, and more. No more asking Siri or searching endlessly - just tap and play.&lt;/p&gt;</description>
+&lt;h2 id=&#34;curated-by-apple-surfaced-by-dj-mood&#34;&gt;Curated by Apple, surfaced by DJ Mood&lt;/h2&gt;
+&lt;p&gt;Access 250+ &amp;ldquo;Siri playlists&amp;rdquo; that Apple created but never made browsable — from &amp;ldquo;Feeling Happy&amp;rdquo; to &amp;ldquo;Rainy Day Vibes&amp;rdquo; to &amp;ldquo;Workout Intensity.&amp;rdquo;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 class="centered">DJ Mood</h1>
-<p><a href="https://apps.apple.com/us/app/djmood/APPID" target="_blank" rel="noopener"><img loading="lazy" src="/images/icons/DJMoodAppIcon.png#center" alt="DJ Mood App Icon"  />
+<p><a href="https://apps.apple.com/us/app/djmood/id6746470429"><img src="/images/icons/DJMoodAppIcon.png" alt="DJ Mood App Icon" width="128" style="display: block; margin: 0 auto;"></a></p>
+<h3 class="centered">Find the perfect playlist for every mood</h3>
+<p><a href="https://apps.apple.com/us/app/djmood/id6746470429" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
 </a></p>
-<h3 class="centered"> Discover Apple Music's hidden mood and activity playlists </h3>
-<p><a href="https://apps.apple.com/us/app/djmood/APPID" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
-</a></p>
-<p>DJ Mood surfaces Apple Music&rsquo;s 250+ hidden &ldquo;Siri playlists&rdquo; - expertly curated mood and activity-based playlists that are normally only discoverable by asking Siri. Browse and play playlists for any mood or moment, all in a beautiful interface designed for iPhone, iPad, Mac, and Apple TV.</p>
+<p>DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.</p>
 <div class="row">
 <div class="column-1">
 <figure>
-    <img loading="lazy" src="/images/screens/djmood-categories.png"
-         alt="DJMood Category Grid" width="256"/> 
+    <img loading="lazy" src="/images/screens/djmood-iphone-categories.png"
+         alt="DJ Mood iPhone Category Grid" width="256"/> 
 </figure>
 
 </div>
 <div class="column-2">
-<h2 id="every-mood-every-moment">Every mood, every moment</h2>
-<p>DJ Mood organizes hundreds of Apple Music playlists into easy-to-browse categories like Happy, Chill, Workout, Focus, and more. No more asking Siri or searching endlessly - just tap and play.</p>
-<h2 id="designed-for-all-your-devices">Designed for all your devices</h2>
-<p>Whether you&rsquo;re on iPhone, iPad, Mac, or Apple TV, DJ Mood adapts beautifully to your screen. Enhanced with stunning Metal shader effects (optional), the app makes browsing playlists a visual delight.</p>
+<h2 id="curated-by-apple-surfaced-by-dj-mood">Curated by Apple, surfaced by DJ Mood</h2>
+<p>Access 250+ &ldquo;Siri playlists&rdquo; that Apple created but never made browsable — from &ldquo;Feeling Happy&rdquo; to &ldquo;Rainy Day Vibes&rdquo; to &ldquo;Workout Intensity.&rdquo;</p>
+<h2 id="effortless-discovery">Effortless discovery</h2>
+<p>No more guessing what to ask Siri or hunting through search. Just open the app, tap a mood, and let the music play.</p>
 </div>
 </div>
-<h2 id="free-to-use">Free to use</h2>
-<p>DJ Mood is completely free to download and use. A tip jar is available if you&rsquo;d like to support continued development.</p>
-<h2 id="privacy-first">Privacy first</h2>
-<p>DJ Mood collects zero data. Your listening habits are yours alone. The app works entirely on your device using Apple&rsquo;s MusicKit framework.</p>
-<h3 id="download-dj-mood-today-and-enjoy">Download DJ Mood today and enjoy:</h3>
+<figure>
+    <img loading="lazy" src="/images/screens/djmood-ipad-happy.png"
+         alt="DJ Mood iPad Happy Mood"/> 
+</figure>
+
+<h2 id="beautiful-on-every-device">Beautiful on every device</h2>
+<p>Enjoy a delightful, swipe-friendly interface on iPhone, a powerful sidebar on iPad and Mac, and a gorgeous full-screen experience on Apple TV.</p>
+<h2 id="fully-accessible">Fully accessible</h2>
+<p>Comprehensive VoiceOver support ensures everyone can navigate by mood and discover great music.</p>
+<h2 id="privacy-first-tip-supported">Privacy-first, tip-supported</h2>
+<p>DJ Mood collects zero data. Your listening habits are yours alone. If you love the app, support development with an optional one-time tip.</p>
+<h3 id="whether-youre">Whether you&rsquo;re:</h3>
 <ul>
-<li>Instant access to 250+ curated Apple Music playlists</li>
-<li>Browse by mood and activity categories</li>
-<li>Siri and Shortcuts integration for voice control</li>
-<li>Spotlight search to quickly find any playlist</li>
-<li>Beautiful emoji-based navigation with optional shader effects</li>
-<li>Works seamlessly across iPhone, iPad, Mac, and Apple TV</li>
-<li>No account required, no data collection</li>
+<li>Feeling happy or need to let off steam</li>
+<li>Hitting the gym or winding down</li>
+<li>Falling in love or finding focus</li>
+<li>Celebrating the seasons or holidays</li>
+<li>Looking for inspiration or self-care</li>
 </ul>
-<p><a href="https://apps.apple.com/us/app/djmood/APPID" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
+<p>…DJ Mood makes it effortless to discover Apple Music&rsquo;s best-kept secret.</p>
+<h3 id="dj-mood-is-your-personal-dj--always-ready-to-match-your-moment">DJ Mood is your personal DJ — always ready to match your moment.</h3>
+<p><a href="https://apps.apple.com/us/app/djmood/id6746470429" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
 </a></p>
 <p><a href="/apps/djmood/privacy">Privacy Policy</a></p>
+<p><a href="/apps/djmood/presskit">Press Kit</a></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/apps/owl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/apps/owl/</guid>
+      <description>&lt;h1 class=&#34;centered&#34;&gt;OWL&lt;/h1&gt;
+&lt;!--
+[![OWL App Icon](/images/icons/OWLAppIcon.png#center)](https://apps.apple.com/us/app/owl/APPID)
+
+&lt;h3 class=&#34;centered&#34;&gt; Real-time fictional alphabet detection and translation &lt;/h3&gt;
+
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/owl/APPID)
+
+OWL (Other Worldly Languages) uses advanced machine learning to automatically detect and translate Aurebesh characters in real-time. This isn&#39;t a keyboard. This isn&#39;t flashcards. This is real character detection using computer vision. Point your camera at mysterious glyphs and watch translations appear instantly at 50 FPS.
+
+&lt;div class=&#34;row&#34;&gt;
+&lt;div class=&#34;column-1&#34;&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/screens/owl-video.png&#34;
+         alt=&#34;OWL Real-time Detection on iPhone&#34; width=&#34;256&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;/div&gt;
+&lt;div class=&#34;column-2&#34;&gt;
+
+## Automatic detection, not learning tools
+
+Unlike other apps that teach you Aurebesh or provide keyboards, OWL uses AI to detect existing text automatically. Already know Aurebesh? Now find it anywhere - in books, screens, posters, or the real world.
+
+## Privacy-first computer vision
+
+All image processing happens on your device using CoreML. Your photos never leave your phone. No cloud uploads. No tracking. No data collection. Built with NASA-quality engineering standards.
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+## Free to try, premium for power users
+
+OWL is free to use with 10 photo translations per day and 30-second video sessions. OWL Premium unlocks unlimited translations, unlimited video length, export capabilities, and future alphabets as an annual subscription or monthly plan.
+
+## Your privacy matters
+
+Other translation apps upload your photos to the cloud. OWL processes everything on-device. We don&#39;t collect your data, track your usage, or sell your information. What you scan stays on your device.
+
+### Download OWL today and enjoy:
+
+- Real-time camera detection at 50 FPS using advanced ML
+- Automatic character recognition for Aurebesh alphabet
+- Photo analysis from your library
+- Smooth zoom and pan for detailed inspection
+- Confidence scores for each detection
+- All processing on-device (privacy-first)
+- Export translated images and text (Premium)
+- More fictional alphabets coming soon
+
+&lt;figure class=&#34;align-center &#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/screens/owl-photo.png#center&#34;
+         alt=&#34;OWL Photo Detection on iPad&#34;/&gt; 
+&lt;/figure&gt;
+
+
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/owl/APPID)
+--&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/apps/owl/privacy&#34;&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 class="centered">OWL</h1>
+<!--
+[![OWL App Icon](/images/icons/OWLAppIcon.png#center)](https://apps.apple.com/us/app/owl/APPID)
+
+<h3 class="centered"> Real-time fictional alphabet detection and translation </h3>
+
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/owl/APPID)
+
+OWL (Other Worldly Languages) uses advanced machine learning to automatically detect and translate Aurebesh characters in real-time. This isn't a keyboard. This isn't flashcards. This is real character detection using computer vision. Point your camera at mysterious glyphs and watch translations appear instantly at 50 FPS.
+
+<div class="row">
+<div class="column-1">
+<figure>
+    <img loading="lazy" src="/images/screens/owl-video.png"
+         alt="OWL Real-time Detection on iPhone" width="256"/> 
+</figure>
+
+</div>
+<div class="column-2">
+
+## Automatic detection, not learning tools
+
+Unlike other apps that teach you Aurebesh or provide keyboards, OWL uses AI to detect existing text automatically. Already know Aurebesh? Now find it anywhere - in books, screens, posters, or the real world.
+
+## Privacy-first computer vision
+
+All image processing happens on your device using CoreML. Your photos never leave your phone. No cloud uploads. No tracking. No data collection. Built with NASA-quality engineering standards.
+
+</div>
+</div>
+
+## Free to try, premium for power users
+
+OWL is free to use with 10 photo translations per day and 30-second video sessions. OWL Premium unlocks unlimited translations, unlimited video length, export capabilities, and future alphabets as an annual subscription or monthly plan.
+
+## Your privacy matters
+
+Other translation apps upload your photos to the cloud. OWL processes everything on-device. We don't collect your data, track your usage, or sell your information. What you scan stays on your device.
+
+### Download OWL today and enjoy:
+
+- Real-time camera detection at 50 FPS using advanced ML
+- Automatic character recognition for Aurebesh alphabet
+- Photo analysis from your library
+- Smooth zoom and pan for detailed inspection
+- Confidence scores for each detection
+- All processing on-device (privacy-first)
+- Export translated images and text (Premium)
+- More fictional alphabets coming soon
+
+<figure class="align-center ">
+    <img loading="lazy" src="/images/screens/owl-photo.png#center"
+         alt="OWL Photo Detection on iPad"/> 
+</figure>
+
+
+[![Download on the App Store](/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center)](https://apps.apple.com/us/app/owl/APPID)
+-->
+<p><a href="/apps/owl/privacy">Privacy Policy</a></p>
 ]]></content:encoded>
     </item>
     
@@ -492,9 +625,9 @@
 &lt;/div&gt;
 &lt;div class=&#34;column-2&#34;&gt;
 &lt;h2 id=&#34;dj-mood&#34;&gt;&lt;a href=&#34;http://localhost:1313/apps/djmood/&#34;&gt;DJ Mood&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;discover-apple-musics-hidden-mood-and-activity-playlists&#34;&gt;Discover Apple Music&amp;rsquo;s hidden mood and activity playlists&lt;/h3&gt;
-&lt;p&gt;DJ Mood surfaces Apple Music&amp;rsquo;s 250+ hidden &amp;ldquo;Siri playlists&amp;rdquo; - expertly curated mood and activity-based playlists that are normally only discoverable by asking Siri. Browse and play playlists for any mood or moment.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/djmood/APPID&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center&#34; alt=&#34;Download on the App Store&#34;  /&gt;
+&lt;h3 id=&#34;find-the-perfect-playlist-for-every-mood&#34;&gt;Find the perfect playlist for every mood&lt;/h3&gt;
+&lt;p&gt;DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/us/app/djmood/id6746470429&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center&#34; alt=&#34;Download on the App Store&#34;  /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -515,9 +648,9 @@
 </div>
 <div class="column-2">
 <h2 id="dj-mood"><a href="/apps/djmood/">DJ Mood</a></h2>
-<h3 id="discover-apple-musics-hidden-mood-and-activity-playlists">Discover Apple Music&rsquo;s hidden mood and activity playlists</h3>
-<p>DJ Mood surfaces Apple Music&rsquo;s 250+ hidden &ldquo;Siri playlists&rdquo; - expertly curated mood and activity-based playlists that are normally only discoverable by asking Siri. Browse and play playlists for any mood or moment.</p>
-<p><a href="https://apps.apple.com/us/app/djmood/APPID" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
+<h3 id="find-the-perfect-playlist-for-every-mood">Find the perfect playlist for every mood</h3>
+<p>DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.</p>
+<p><a href="https://apps.apple.com/us/app/djmood/id6746470429" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
 </a></p>
 </div>
 </div>
@@ -532,6 +665,158 @@
 <p>Vid Diva is for people who want to track the shows and movies they want to watch, are watching, or have watched – all in a single app. Just add shows and movies to Vid Diva and never miss a new episode or premiere!</p>
 <p><a href="https://apps.apple.com/us/app/vid-diva/id1569992959" target="_blank" rel="noopener"><img loading="lazy" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg#center" alt="Download on the App Store"  />
 </a></p>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/apps/djmood/presskit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/apps/djmood/presskit/</guid>
+      <description>&lt;h1 id=&#34;dj-mood-press-kit&#34;&gt;DJ Mood Press Kit&lt;/h1&gt;
+&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-dj-mood&#34;&gt;What is DJ Mood?&lt;/h2&gt;
+&lt;p&gt;DJ Mood surfaces Apple Music&amp;rsquo;s &amp;ldquo;Siri playlists&amp;rdquo; — 250+ mood and activity-based playlists that Apple created but never made browsable. These playlists are normally only discoverable by asking Siri things like &amp;ldquo;play something happy&amp;rdquo; or &amp;ldquo;play workout music.&amp;rdquo; DJ Mood presents them all in a beautiful, organized interface so you can browse and discover without guessing what to ask.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="dj-mood-press-kit">DJ Mood Press Kit</h1>
+<h2 id="tldr">TL;DR</h2>
+<p>DJ Mood unlocks over 250 hidden Apple Music playlists that you can only discover by asking Siri — until now. All beautifully organized by mood, activity, and vibe.</p>
+<h2 id="what-is-dj-mood">What is DJ Mood?</h2>
+<p>DJ Mood surfaces Apple Music&rsquo;s &ldquo;Siri playlists&rdquo; — 250+ mood and activity-based playlists that Apple created but never made browsable. These playlists are normally only discoverable by asking Siri things like &ldquo;play something happy&rdquo; or &ldquo;play workout music.&rdquo; DJ Mood presents them all in a beautiful, organized interface so you can browse and discover without guessing what to ask.</p>
+<p>Users will enjoy:</p>
+<ul>
+<li>250+ curated Apple Music playlists organized by mood, activity, and vibe</li>
+<li>Beautiful emoji-based navigation that makes discovery fun</li>
+<li>A delightful, swipe-friendly interface on iPhone</li>
+<li>A powerful sidebar experience on iPad and Mac</li>
+<li>A gorgeous full-screen experience on Apple TV</li>
+<li>Effortless one-tap playback — just tap a mood and let the music play</li>
+<li>Comprehensive VoiceOver accessibility support</li>
+</ul>
+<h2 id="who-is-dj-mood-for">Who is DJ Mood for?</h2>
+<p>DJ Mood is for anyone with an Apple Music subscription who wants to discover new music based on how they&rsquo;re feeling. It&rsquo;s perfect for:</p>
+<ul>
+<li>People who never knew Apple Music had hundreds of hidden mood-based playlists</li>
+<li>Anyone tired of searching for the &ldquo;right&rdquo; playlist for their current vibe</li>
+<li>Music lovers who want to explore playlists for activities like working out, focusing, relaxing, or celebrating</li>
+<li>Apple TV users who want a beautiful music discovery experience on the big screen</li>
+<li>Anyone who appreciates thoughtfully designed, privacy-respecting apps</li>
+</ul>
+<h2 id="key-features">Key Features</h2>
+<p><strong>Curated by Apple, surfaced by DJ Mood</strong>
+Access 250+ &ldquo;Siri playlists&rdquo; that Apple created but never made browsable — from &ldquo;Feeling Happy&rdquo; to &ldquo;Rainy Day Vibes&rdquo; to &ldquo;Workout Intensity.&rdquo;</p>
+<p><strong>Beautiful on every device</strong>
+Enjoy a delightful, swipe-friendly interface on iPhone, a powerful sidebar on iPad and Mac, and a gorgeous full-screen experience on Apple TV.</p>
+<p><strong>Effortless discovery</strong>
+No more guessing what to ask Siri or hunting through search. Just open the app, tap a mood, and let the music play.</p>
+<p><strong>Fully accessible</strong>
+Comprehensive VoiceOver support ensures everyone can navigate by mood and discover great music.</p>
+<h2 id="pricing-and-privacy">Pricing and Privacy</h2>
+<p>DJ Mood is completely free to use. The app collects zero data — your listening habits are yours alone.</p>
+<p>If you love the app, you can support development with an optional one-time tip:</p>
+<ul>
+<li>Feeling Nice: $0.99</li>
+<li>Feeling Generous: $3.99</li>
+<li>Feeling Awesome: $9.99</li>
+</ul>
+<h2 id="links-and-contacts">Links and Contacts</h2>
+<p>Website: <a href="https://www.drmarkpowell.com/apps/djmood/" target="_blank" rel="noopener">https://www.drmarkpowell.com/apps/djmood/</a></p>
+<p>Privacy Policy: <a href="https://www.drmarkpowell.com/apps/djmood/privacy/" target="_blank" rel="noopener">https://www.drmarkpowell.com/apps/djmood/privacy/</a></p>
+<p><a href="mailto:drmarkpowell@gmail.com">Email me</a></p>
+<p>Social: @drmarkpowell@iosdev.space on Mastodon, @drmarkpowell elsewhere</p>
+<h2 id="dj-mood-screens-icons-and-graphics">DJ Mood screens, icons and graphics</h2>
+<div class="row">
+    <div class="column-1">
+<h3 id="dj-mood-app-icon">DJ Mood App Icon</h3>
+<ul>
+<li>
+<p><a href="/images/icons/DJMoodAppIcon1024.png">Full resolution 1024x1024</a></p>
+</li>
+<li>
+<p><a href="/images/icons/DJMoodAppIcon180.png">Full resolution 180x180</a></p>
+</li>
+<li>
+<p><a href="/images/icons/DJMoodAppIcon120.png">Full resolution 120x120</a></p>
+  </div>
+  <div class="column-2">
+      <figure>
+            <img loading="lazy" src="/images/icons/DJMoodAppIcon180.png"
+                 alt="DJ Mood App Icon"/> 
+        </figure>
+
+  </div>
+</li>
+</ul>
+</div>
+<div class="row">
+<div class="column-1">
+<h3 id="iphone-screenshots">iPhone Screenshots</h3>
+<ul>
+<li><a href="/images/screens/djmood-iPhone1.PNG">iPhone Screenshot 1</a></li>
+<li><a href="/images/screens/djmood-iPhone2.png">iPhone Screenshot 2</a></li>
+<li><a href="/images/screens/djmood-iPhone3.PNG">iPhone Screenshot 3</a></li>
+</ul>
+</div>
+<div class="column-2">
+    <figure>
+        <img loading="lazy" src="/images/screens/djmood-iPhone1.PNG"
+             alt="DJ Mood on iPhone" width="256"/> 
+    </figure>
+
+</div>
+</div>
+<div class="row">
+<div class="column-1">
+<h3 id="ipad-screenshots">iPad Screenshots</h3>
+<ul>
+<li><a href="/images/screens/djmood-iPad1.PNG">iPad Screenshot 1</a></li>
+<li><a href="/images/screens/djmood-iPad2.PNG">iPad Screenshot 2</a></li>
+<li><a href="/images/screens/djmood-iPad3.PNG">iPad Screenshot 3</a></li>
+</ul>
+</div>
+<div class="column-2">
+    <figure>
+        <img loading="lazy" src="/images/screens/djmood-iPad1.PNG"
+             alt="DJ Mood on iPad" width="400"/> 
+    </figure>
+
+</div>
+</div>
+<div class="row">
+<div class="column-1">
+<h3 id="mac-screenshots">Mac Screenshots</h3>
+<ul>
+<li><a href="/images/screens/djmood-Mac1.png">Mac Screenshot 1</a></li>
+<li><a href="/images/screens/djmood-Mac2.png">Mac Screenshot 2</a></li>
+<li><a href="/images/screens/djmood-Mac3.png">Mac Screenshot 3</a></li>
+</ul>
+</div>
+<div class="column-2">
+    <figure>
+        <img loading="lazy" src="/images/screens/djmood-Mac1.png"
+             alt="DJ Mood on Mac" width="400"/> 
+    </figure>
+
+</div>
+</div>
+<div class="row">
+<div class="column-1">
+<h3 id="apple-tv-screenshots">Apple TV Screenshots</h3>
+<ul>
+<li><a href="/images/screens/djmood-tvOS1.png">Apple TV Screenshot 1</a></li>
+<li><a href="/images/screens/djmood-tvOS2.png">Apple TV Screenshot 2</a></li>
+<li><a href="/images/screens/djmood-tvOS3.png">Apple TV Screenshot 3</a></li>
+</ul>
+</div>
+<div class="column-2">
+    <figure>
+        <img loading="lazy" src="/images/screens/djmood-tvOS1.png"
+             alt="DJ Mood on Apple TV" width="400"/> 
+    </figure>
+
 </div>
 </div>
 ]]></content:encoded>
@@ -608,6 +893,89 @@
 <h3 id="changes-to-this-policy">Changes to this policy</h3>
 <ul>
 <li>November 27, 2025: First published.</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/apps/owl/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/apps/owl/privacy/</guid>
+      <description>&lt;h1 id=&#34;owl-privacy-policy&#34;&gt;OWL Privacy Policy&lt;/h1&gt;
+&lt;p&gt;This policy applies to all information collected or submitted on OWL&amp;rsquo;s apps for iPhone, iPad, and any other devices and platforms.&lt;/p&gt;
+&lt;h2 id=&#34;camera-and-photo-library-access&#34;&gt;Camera and Photo Library Access&lt;/h2&gt;
+&lt;p&gt;OWL requires camera and photo library access to detect and translate characters in images:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Camera Access&lt;/strong&gt;: Used for real-time character detection. All processing happens on your device using CoreML. Camera frames are not saved, uploaded, or transmitted.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Photo Library Access&lt;/strong&gt;: Used to analyze images you select. Photos are processed locally on your device and never leave your phone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On-Device Processing&lt;/strong&gt;: All image analysis is performed using Apple&amp;rsquo;s Vision and CoreML frameworks directly on your device. No images are sent to servers or third parties.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;machine-learning-models&#34;&gt;Machine Learning Models&lt;/h2&gt;
+&lt;p&gt;OWL uses an on-device model for character detection:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="owl-privacy-policy">OWL Privacy Policy</h1>
+<p>This policy applies to all information collected or submitted on OWL&rsquo;s apps for iPhone, iPad, and any other devices and platforms.</p>
+<h2 id="camera-and-photo-library-access">Camera and Photo Library Access</h2>
+<p>OWL requires camera and photo library access to detect and translate characters in images:</p>
+<ul>
+<li><strong>Camera Access</strong>: Used for real-time character detection. All processing happens on your device using CoreML. Camera frames are not saved, uploaded, or transmitted.</li>
+<li><strong>Photo Library Access</strong>: Used to analyze images you select. Photos are processed locally on your device and never leave your phone.</li>
+<li><strong>On-Device Processing</strong>: All image analysis is performed using Apple&rsquo;s Vision and CoreML frameworks directly on your device. No images are sent to servers or third parties.</li>
+</ul>
+<h2 id="machine-learning-models">Machine Learning Models</h2>
+<p>OWL uses an on-device model for character detection:</p>
+<ul>
+<li>The ML model is downloaded once during app installation</li>
+<li>All inference (character detection) runs locally on your device</li>
+<li>No detection data is collected, stored, or transmitted</li>
+<li>Your images and detection results remain completely private</li>
+</ul>
+<h2 id="revenuecat-for-subscriptions">RevenueCat for Subscriptions</h2>
+<p>OWL uses RevenueCat to manage subscriptions and in-app purchases:</p>
+<ul>
+<li>An anonymous user ID is generated for purchase management</li>
+<li>RevenueCat does not track any personal information about you</li>
+<li>No information about what you detect or translate is shared with RevenueCat</li>
+<li>RevenueCat only processes subscription status and purchase receipts</li>
+</ul>
+<p>For more information about RevenueCat&rsquo;s privacy practices, see their <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+<h2 id="data-collection">Data Collection</h2>
+<p><strong>We do not collect, store, or transmit any personal data or usage information.</strong></p>
+<p>OWL operates entirely on your device and does not collect information about you or your usage of the app. We do not:</p>
+<ul>
+<li>Collect personal information</li>
+<li>Track your activity or what you detect</li>
+<li>Store your photos or detection results on our servers</li>
+<li>Share your information with third parties</li>
+<li>Use analytics or tracking services</li>
+<li>Upload images to the cloud</li>
+</ul>
+<h2 id="security">Security</h2>
+<p>All network data transfers in the OWL app (for subscription verification only) use HTTPS to keep your information secure.</p>
+<h2 id="third-party-links-and-content">Third-party links and content</h2>
+<p>OWL is an independent tool for fictional alphabet detection and is not affiliated with or endorsed by any entertainment franchises.</p>
+<h2 id="california-online-privacy-protection-act-compliance">California Online Privacy Protection Act Compliance</h2>
+<p>We comply with the California Online Privacy Protection Act. We therefore will not distribute your personal information to outside parties without your consent. (We collect no personal information anyway!)</p>
+<h2 id="childrens-online-privacy-protection-act-compliance">Children&rsquo;s Online Privacy Protection Act Compliance</h2>
+<p>We never collect or maintain information at our website from those we actually know are under 13, and no part of our website is structured to attract anyone under 13. Since OWL does not collect any data at all, the app is safe for users of all ages.</p>
+<h2 id="information-for-european-union-customers">Information for European Union Customers</h2>
+<p>OWL processes all data locally on your device. No personal information is transmitted to servers. Subscription data processed by RevenueCat may be stored outside of the EU, but this data is limited to anonymous purchase receipts and subscription status.</p>
+<h2 id="your-rights">Your Rights</h2>
+<p>Since OWL does not collect any personal data beyond anonymous subscription management, there is minimal data to access, modify, or delete. You maintain complete privacy while using the app.</p>
+<p>To manage your subscription data:</p>
+<ul>
+<li>View and manage subscriptions through the iOS Settings app</li>
+<li>Cancel subscriptions at any time through App Store settings</li>
+<li>Contact us if you need assistance with subscription-related data</li>
+</ul>
+<h2 id="your-consent">Your Consent</h2>
+<p>By using our apps, you consent to our privacy policy.</p>
+<h2 id="contacting-us">Contacting Us</h2>
+<p>If you have questions regarding this privacy policy, you may contact us through the App Store or via email. Please note that data management should be done within the iOS Settings app, not via email requests, for security reasons.</p>
+<h3 id="changes-to-this-policy">Changes to this policy</h3>
+<ul>
+<li>December 30, 2024: First published.</li>
 </ul>
 ]]></content:encoded>
     </item>
