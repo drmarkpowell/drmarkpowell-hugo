@@ -31,9 +31,17 @@ No more guessing what to ask Siri or hunting through search. Just open the app, 
 
 {{< figure src="/images/screens/djmood-ipad-happy.png" alt="DJ Mood iPad Happy Mood" >}}
 
+## What's New in Version 1.0.1
+
+- **Favorites** — save any playlist to a personal collection, available across all your devices
+- **Recently Played** — see your listening history at a glance, synced via iCloud
+- **Sort your way** — sort playlists alphabetically or by last played date
+- **macOS Menu Bar** — control playback from the menu bar without switching apps
+- **Siri shuffle** — "Hey Siri, shuffle [playlist] in DJ Mood" now works hands-free
+
 ## Beautiful on every device
 
-Enjoy a delightful, swipe-friendly interface on iPhone, a powerful sidebar on iPad and Mac, and a gorgeous full-screen experience on Apple TV.
+Enjoy a delightful, swipe-friendly interface on iPhone, a powerful sidebar on iPad and Mac, a gorgeous full-screen experience on Apple TV, and quick playback controls from the macOS menu bar.
 
 ## Fully accessible
 
