@@ -48,7 +48,7 @@ Comprehensive VoiceOver support ensures everyone can navigate by mood and discov
 
 ## Pricing and Privacy
 
-DJ Mood is completely free to use. The app collects zero data — your listening habits are yours alone.
+DJ Mood is completely free to use. The app doesn't collect personal information or track you — your listening habits are yours alone.
 
 If you love the app, you can support development with an optional one-time tip:
 

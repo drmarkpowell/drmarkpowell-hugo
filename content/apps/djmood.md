@@ -49,7 +49,7 @@ Comprehensive VoiceOver support ensures everyone can navigate by mood and discov
 
 ## Privacy-first, tip-supported
 
-DJ Mood collects zero data. Your listening habits are yours alone. If you love the app, support development with an optional one-time tip.
+DJ Mood doesn't collect personal information or track you. Your listening habits are yours alone. If you love the app, support development with an optional one-time tip.
 
 ### Whether you're:
 
